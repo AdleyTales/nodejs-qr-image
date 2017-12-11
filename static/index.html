@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid #dcdcdc;
+            width:360px;
+            height: 360px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <button id="btn">点击生成二维码</button>
+    <div>
+        <img id="mimg" src="" alt="">
+    </div>
+
+    <script src="./axios.js"></script>
+    <script>
+        document.getElementById('btn').onclick = function () {
+
+            var atext1 = document.getElementById('text1').value;
+            var mimg = document.getElementById('mimg');
+
+            axios.get('/create_qr_image', {
+                    params: {
+                        val: atext1
+                    }
+                })
+                .then(msg => {
+                    console.log(msg);
+
+                    mimg.setAttribute('src',msg.data.imageUrl);
+
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+    </script>
+</body>
+
+</html>

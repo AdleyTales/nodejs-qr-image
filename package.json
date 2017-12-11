@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-qr-image",
+  "version": "1.0.0",
+  "description": "> 用express简单生成一个服务器，前端传给后台参数，后台生成对应的二维码图片，返回给前端",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdleyTales/nodejs-qr-image.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdleyTales/nodejs-qr-image/issues"
+  },
+  "homepage": "https://github.com/AdleyTales/nodejs-qr-image#readme",
+  "devDependencies": {
+    "node-uuid-generator": "^1.0.0",
+    "qr-image": "^3.2.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
